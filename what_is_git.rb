@@ -1,8 +1,6 @@
 class WhatIsGit
   def show
-    puts "Do you understand the basis of git? [yes/no]"
-    input = gets.chomp.downcase
-    case input
+    case input("Do you understand the basis of git? [yes/no]")
     when "yes", "y"
       puts "Git is easy!"
     else
@@ -12,6 +10,13 @@ class WhatIsGit
 
   def about
     puts "http://ja.wikipedia.org/wiki/Git"
+  end
+
+  private
+
+  def input(message)
+    puts message
+    gets.chomp.downcase
   end
 end
 
